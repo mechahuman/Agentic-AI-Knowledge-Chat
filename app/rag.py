@@ -1,7 +1,7 @@
 from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
-from app.embeddings import LocalSentenceTransformerEmbeddings
-from app.utils import get_env
+from embeddings import LocalSentenceTransformerEmbeddings
+from utils import get_env
 import os
 
 DB_PATH = "faiss_index"

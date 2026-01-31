@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph
 from typing import TypedDict, List, Tuple
-from app.rag import retrieve, generate_answer
+from rag import retrieve, generate_answer
 
 
 class RAGState(TypedDict):
