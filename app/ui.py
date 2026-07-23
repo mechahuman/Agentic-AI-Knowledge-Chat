@@ -1,6 +1,6 @@
 import streamlit as st
 
-from .graph import rag_app
+from app.graph import rag_app
 
 st.set_page_config(
     page_title="Agentic AI RAG Chatbot",

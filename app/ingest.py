@@ -1,7 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from .embeddings import LocalSentenceTransformerEmbeddings
+from app.embeddings import LocalSentenceTransformerEmbeddings
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

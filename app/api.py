@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from .graph import rag_app
+from app.graph import rag_app
 
 app = FastAPI(title = "Agentic AI")
 
