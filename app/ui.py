@@ -1,6 +1,6 @@
 import streamlit as st
 
-from graph import rag_app
+from app.graph import rag_app
 
 st.set_page_config(
     page_title="Agentic AI RAG Chatbot",
@@ -25,7 +25,7 @@ if st.button("Ask") and query.strip():
 
             confidence = float(result.get("confidence", 0.0))
             st.subheader("Confidence")
-            st.progress(min(confidence, 1.0))
+            st.progress(max(0.0, min(confidence, 1.0)))
             st.caption(f"Confidence Score: {round(confidence, 2)}")
 
             st.subheader("Retrieved Context")

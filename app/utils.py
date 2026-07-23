@@ -1,7 +1,7 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+load_dotenv(find_dotenv())
 
 def get_env(var: str) -> str:
     value = os.getenv(var)

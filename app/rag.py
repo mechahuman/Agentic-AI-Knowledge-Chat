@@ -1,10 +1,11 @@
 from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
-from embeddings import LocalSentenceTransformerEmbeddings
-from utils import get_env
+from app.embeddings import LocalSentenceTransformerEmbeddings
+from app.utils import get_env
 import os
 
-DB_PATH = "faiss_index"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB_PATH = os.path.join(BASE_DIR, "faiss_index")
 
 embeddings = LocalSentenceTransformerEmbeddings()
 
@@ -19,7 +20,7 @@ db = FAISS.load_local(
 
 llm = ChatGroq(
     api_key=get_env("GROQ_API_KEY"),
-    model_name="groq/compound",
+    model_name="llama-3.1-8b-instant",
     temperature=0
 )
 

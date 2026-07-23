@@ -1,10 +1,12 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from embeddings import LocalSentenceTransformerEmbeddings
+from app.embeddings import LocalSentenceTransformerEmbeddings
+import os
 
-PDF_PATH = "data/Ebook-Agentic-AI.pdf"
-DB_PATH = "faiss_index"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PDF_PATH = os.path.join(BASE_DIR, "data", "Ebook-Agentic-AI.pdf")
+DB_PATH = os.path.join(BASE_DIR, "faiss_index")
 
 def ingest():
     loader = PyPDFLoader(PDF_PATH)
