@@ -1,5 +1,10 @@
-import streamlit as st
+import sys
+import os
 
+# Add parent directory to path for proper module resolution
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import streamlit as st
 from app.graph import rag_app
 
 st.set_page_config(
